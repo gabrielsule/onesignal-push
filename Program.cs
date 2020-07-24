@@ -16,11 +16,11 @@ namespace SendPN
     {
         static void Main(string[] args)
         {
-            var client = new OneSignalClient("NWExMmU5YmQtMjc0MS00YWM3LWFjMDktYzk1NjY5ZDZlMjQ4");
+            var client = new OneSignalClient("NWExxx"); //id del cliente
 
             var options = new NotificationCreateOptions
             {
-                AppId = new Guid("3f0f65fa-c129-43da-a412-a3767cb0838f"),
+                AppId = new Guid("xxx"), // id de la aplicacion
                 IncludedSegments = new string[] { "All" },
             };
 
@@ -29,8 +29,8 @@ namespace SendPN
                 new ActionButtonField() {Id = "aceptar", Text = "Aceptar viaje"}
             };
 
-            options.Headings.Add(LanguageCodes.English, "Eco Taxi");
-            options.Contents.Add(LanguageCodes.English, "Nuevo viaje en espera");
+            options.Headings.Add(LanguageCodes.English, "Dummy");
+            options.Contents.Add(LanguageCodes.English, "contenido de dummy");
             options.ActionButtons = abf;
             client.Notifications.Create(options);
         }
